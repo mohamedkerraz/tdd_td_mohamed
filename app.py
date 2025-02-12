@@ -10,7 +10,9 @@ def set_reines(n):
 
     def process_resolve(plateau, ligne, solutions):
         
-        solutions.append(plateau[:])
+        if ligne == n:
+            solutions.append(plateau[:])
+            return
         for col in range(n):
             if checkIf_attack(plateau, ligne, col):
                 plateau[ligne] = col
@@ -21,14 +23,19 @@ def set_reines(n):
     return solutions
 
 def generate_map(solutions, n):
-    grille = []
+    grilles = []
     for sol in solutions:
         grille = [["#" for _ in range(n)] for _ in range(n)]
         for i in range(n):
             grille[i][sol[i]] = "R"
+
+        # print
         for ligne in grille:
             print(" ".join(ligne))
         print()
+
+        # stockage
+        grilles.append(grille)
 
 n = int(input("Entrez le n: "))
 solutions = set_reines(n)
