@@ -14,6 +14,7 @@ def set_reines(n):
     return solutions
 
 def checkIf_attack(plateau, ligne, col):
+    """check if queen is safe"""
     for i in range(ligne):
         if plateau[i] == col or \
             plateau[i] - i == col - ligne or \
@@ -22,6 +23,7 @@ def checkIf_attack(plateau, ligne, col):
     return True
 
 def generate_map(solutions, n):
+    """generate  a chest and save it"""
     grilles = []
     for sol in solutions:
         grille = [["#" for _ in range(n)] for _ in range(n)]
@@ -38,6 +40,7 @@ def generate_map(solutions, n):
     return grilles
 
 def init_plateau(n):
+    """init tab and check input n"""
     if not isinstance(n, int) or n < 1 or n > 10:
         message = "Erreur : n doit être un entier positif"
         print(message)
