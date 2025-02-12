@@ -1,13 +1,4 @@
 def set_reines(n):
-    def checkIf_attack(plateau, ligne, col):
-        
-        for i in range(ligne):
-            if plateau[i] == col or \
-               plateau[i] - i == col - ligne or \
-               plateau[i] + i == col + ligne:
-                return False
-        return True
-
     def process_resolve(plateau, ligne, solutions):
         
         if ligne == n:
@@ -21,6 +12,14 @@ def set_reines(n):
     solutions = []
     process_resolve([-1] * n, 0, solutions)
     return solutions
+
+def checkIf_attack(plateau, ligne, col):
+    for i in range(ligne):
+        if plateau[i] == col or \
+            plateau[i] - i == col - ligne or \
+            plateau[i] + i == col + ligne:
+            return False
+    return True
 
 def generate_map(solutions, n):
     grilles = []
@@ -43,7 +42,7 @@ def init_plateau(n):
         message = "Erreur : n doit être un entier positif"
         print(message)
         return message
-    
+
     solutions = set_reines(n)
     if not solutions:
         message = f"no solution, for n = {n}"
