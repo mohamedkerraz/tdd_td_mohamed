@@ -39,12 +39,18 @@ def generate_map(solutions, n):
     return grilles
 
 def init_plateau(n):
+    if not isinstance(n, int) or n < 1:
+        message = "Erreur : n doit être un entier positif"
+        print(message)
+        return message
+    
     solutions = set_reines(n)
     if not solutions:
         message = f"no solution, for n = {n}"
         print(message)
         return message
-    generate_map(solutions, n)
+    print(f"Solutions: {len(solutions)}")
+    return generate_map(solutions, n)
 
 def main():
     n = int(input("Entrez le n: "))

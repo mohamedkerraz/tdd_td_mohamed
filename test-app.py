@@ -32,6 +32,12 @@ class TestNQueens(unittest.TestCase):
         self.assertEqual(init_plateau(3), "no solution, for n = 3", "Échec : n=3 devrait afficher un message d'erreur")
 
 
+    def test_invalid_n(self):
+        self.assertEqual(init_plateau(-1), "Erreur : n doit être un entier positif", "Échec : n=-1 devrait retourner une erreur")
+        self.assertEqual(init_plateau(0), "Erreur : n doit être un entier positif", "Échec : n=0 devrait retourner une erreur")
+        self.assertEqual(init_plateau("abc"), "Erreur : n doit être un entier positif", "Échec : n='abc' devrait retourner une erreur")
+        self.assertEqual(init_plateau(None), "Erreur : n doit être un entier positif", "Échec : n=None devrait retourner une erreur")
+
 
 
 if __name__ == "__main__":
