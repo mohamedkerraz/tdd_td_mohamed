@@ -57,6 +57,11 @@ class TestNQueens(unittest.TestCase):
         self.assertFalse(checkIf_attack(plateau, 2, 1))
         self.assertTrue(checkIf_attack(plateau, 3, 1))
 
+    def test_n_queens_20(self):
+        """Test avec n=20 (limite maximale)"""
+        solutions = set_reines(20)
+        self.assertGreater(len(solutions), 0, "Échec : n=10 devrait avoir des solutions")
+
 
 if __name__ == "__main__":
     unittest.main()
