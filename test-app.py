@@ -57,16 +57,6 @@ class TestNQueens(unittest.TestCase):
         self.assertFalse(checkIf_attack(plateau, 2, 1))
         self.assertTrue(checkIf_attack(plateau, 3, 1))
 
-    def test_(self):
-        """Test la fonction checkIf_attack pour différents cas"""
-        plateau = [0, 2, -1, -1]  # Plateau partiel pour un échiquier de 4x4
-
-        self.assertFalse(checkIf_attack(plateau, 2, 0))
-        self.assertFalse(checkIf_attack(plateau, 2, 3))
-        self.assertFalse(checkIf_attack(plateau, 2, 1))
-        self.assertTrue(checkIf_attack(plateau, 3, 1))
-
-
 
 if __name__ == "__main__":
     unittest.main()
