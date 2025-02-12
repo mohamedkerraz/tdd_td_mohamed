@@ -36,8 +36,10 @@ def generate_map(solutions, n):
 
         # stockage
         grilles.append(grille)
+    return grilles
 
-n = int(input("Entrez le n: "))
-solutions = set_reines(n)
 
-generate_map(solutions, n)
+def init_plateau(n):
+    n = int(input("Entrez le n: "))
+    solutions = set_reines(n)
+    generate_map(solutions, n)
