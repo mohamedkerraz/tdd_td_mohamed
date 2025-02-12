@@ -38,7 +38,7 @@ def generate_map(solutions, n):
     return grilles
 
 def init_plateau(n):
-    if not isinstance(n, int) or n < 1:
+    if not isinstance(n, int) or n < 1 or n > 10:
         message = "Erreur : n doit être un entier positif"
         print(message)
         return message
