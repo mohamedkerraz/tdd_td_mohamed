@@ -38,8 +38,17 @@ def generate_map(solutions, n):
         grilles.append(grille)
     return grilles
 
-
 def init_plateau(n):
-    n = int(input("Entrez le n: "))
     solutions = set_reines(n)
+    if not solutions:
+        message = f"no solution, for n = {n}"
+        print(message)
+        return message
     generate_map(solutions, n)
+
+def main():
+    n = int(input("Entrez le n: "))
+    init_plateau(n)
+
+if __name__ == "__main__":
+    main()
